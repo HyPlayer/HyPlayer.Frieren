@@ -2,10 +2,10 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+using Microsoft.Toolkit.Uwp.UI.Predicates;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using Microsoft.Toolkit.Uwp.UI.Predicates;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Markup;
@@ -102,10 +102,10 @@ namespace Microsoft.Toolkit.Uwp.UI
             where T : notnull, FrameworkElement
             where TPredicate : struct, IPredicate<T>
         {
-            // Jump label to manually optimize the tail recursive paths for elements with a single
-            // child by just overwriting the current element and jumping back to the start of the
-            // method. This avoids a recursive call and one stack frame every time.
-            Start:
+        // Jump label to manually optimize the tail recursive paths for elements with a single
+        // child by just overwriting the current element and jumping back to the start of the
+        // method. This avoids a recursive call and one stack frame every time.
+        Start:
 
             if (element is Panel panel)
             {
@@ -343,7 +343,7 @@ namespace Microsoft.Toolkit.Uwp.UI
         /// <returns>All the child <see cref="FrameworkElement"/> instance from <paramref name="element"/>.</returns>
         public static IEnumerable<FrameworkElement> FindChildren(this FrameworkElement element)
         {
-            Start:
+        Start:
 
             if (element is Panel panel)
             {

@@ -2,9 +2,9 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+using Microsoft.Toolkit.Uwp.UI.Predicates;
 using System;
 using System.Collections.Generic;
-using Microsoft.Toolkit.Uwp.UI.Predicates;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
 
