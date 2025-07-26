@@ -20,7 +20,7 @@ namespace Microsoft.Toolkit.Uwp.UI
         /// <returns>Color</returns>
         public static Color GetBackgroundColor(Page page)
         {
-            Color color;
+            Color color = new Color();
 
             var titleBar = GetTitleBar();
             if (titleBar != null)
@@ -52,7 +52,7 @@ namespace Microsoft.Toolkit.Uwp.UI
         /// <returns>Color</returns>
         public static Color GetButtonBackgroundColor(Page page)
         {
-            Color color;
+            Color color = new Color();
 
             var titleBar = GetTitleBar();
             if (titleBar != null)
@@ -84,7 +84,7 @@ namespace Microsoft.Toolkit.Uwp.UI
         /// <returns>Color</returns>
         public static Color GetButtonForegroundColor(Page page)
         {
-            Color color;
+            Color color = new Color();
 
             var titleBar = GetTitleBar();
             if (titleBar != null)
@@ -116,7 +116,7 @@ namespace Microsoft.Toolkit.Uwp.UI
         /// <returns>Color</returns>
         public static Color GetButtonHoverBackgroundColor(Page page)
         {
-            Color color;
+            Color color = new Color();
 
             var titleBar = GetTitleBar();
             if (titleBar != null)
@@ -148,7 +148,7 @@ namespace Microsoft.Toolkit.Uwp.UI
         /// <returns>Color</returns>
         public static Color GetButtonHoverForegroundColor(Page page)
         {
-            Color color;
+            Color color = new Color();
 
             var titleBar = GetTitleBar();
             if (titleBar != null)
@@ -180,7 +180,7 @@ namespace Microsoft.Toolkit.Uwp.UI
         /// <returns>Color</returns>
         public static Color GetButtonInactiveBackgroundColor(Page page)
         {
-            Color color;
+            Color color = new Color();
 
             var titleBar = GetTitleBar();
             if (titleBar != null)
@@ -212,7 +212,7 @@ namespace Microsoft.Toolkit.Uwp.UI
         /// <returns>Color</returns>
         public static Color GetButtonInactiveForegroundColor(Page page)
         {
-            Color color;
+            Color color = new Color();
 
             var titleBar = GetTitleBar();
             if (titleBar != null)
@@ -244,7 +244,7 @@ namespace Microsoft.Toolkit.Uwp.UI
         /// <returns>Color</returns>
         public static Color GetButtonPressedBackgroundColor(Page page)
         {
-            Color color;
+            Color color = new Color();
 
             var titleBar = GetTitleBar();
             if (titleBar != null)
@@ -276,7 +276,7 @@ namespace Microsoft.Toolkit.Uwp.UI
         /// <returns>Color</returns>
         public static Color GetButtonPressedForegroundColor(Page page)
         {
-            Color color;
+            Color color = new Color();
 
             var titleBar = GetTitleBar();
             if (titleBar != null)
@@ -308,7 +308,7 @@ namespace Microsoft.Toolkit.Uwp.UI
         /// <returns>Color</returns>
         public static Color GetForegroundColor(Page page)
         {
-            Color color;
+            Color color = new Color();
 
             var titleBar = GetTitleBar();
             if (titleBar != null)
@@ -340,7 +340,7 @@ namespace Microsoft.Toolkit.Uwp.UI
         /// <returns>Color</returns>
         public static Color GetInactiveBackgroundColor(Page page)
         {
-            Color color;
+            Color color = new Color();
 
             var titleBar = GetTitleBar();
             if (titleBar != null)
@@ -372,7 +372,7 @@ namespace Microsoft.Toolkit.Uwp.UI
         /// <returns>Color</returns>
         public static Color GetInactiveForegroundColor(Page page)
         {
-            Color color;
+            Color color = new Color();
 
             var titleBar = GetTitleBar();
             if (titleBar != null)
