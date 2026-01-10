@@ -5,6 +5,7 @@
 using Microsoft.Toolkit.Uwp.UI.Predicates;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -665,10 +666,11 @@ namespace Microsoft.Toolkit.Uwp.UI
         /// </summary>
         /// <param name="element">The parent element.</param>
         /// <returns>The retrieved content control, or <see langword="null"/> if not available.</returns>
-        public static UIElement? GetContentControl(this FrameworkElement element)
+        public static UIElement? GetContentControl<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicProperties)] T>(this T element)
+            where T : FrameworkElement
         {
-            Type type = element.GetType();
-            TypeInfo? typeInfo = type.GetTypeInfo();
+            var type = typeof(T);
+            TypeInfo? typeInfo = type?.GetTypeInfo();
 
             while (typeInfo is not null)
             {
@@ -678,9 +680,12 @@ namespace Microsoft.Toolkit.Uwp.UI
                 {
                     if (attribute.AttributeType == typeof(ContentPropertyAttribute))
                     {
-                        string propertyName = (string)attribute.NamedArguments[0].TypedValue.Value;
-                        PropertyInfo? propertyInfo = type.GetProperty(propertyName);
-
+                        var propertyName = (string?)attribute.NamedArguments[0].TypedValue.Value;
+                        if (propertyName == null)
+                        {
+                            return null;
+                        }
+                        PropertyInfo? propertyInfo = type?.GetProperty(propertyName);
                         return propertyInfo?.GetValue(element) as UIElement;
                     }
                 }
